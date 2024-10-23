@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ride Rave - Login</title> 
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+
+    <!-- Script para Bootstrap y jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="icon" href="./imagenes/titulo-isil-removebg-preview.png">
+
+    
+    <style>
+        body {
+            background-color: #f8f9fa; /* Color de fondo claro */
+            font-family: 'Arial', sans-serif; /* Tipografía */
+        }
+        
+        .content {
+            flex: 2;
+            padding: 120px; /* Espaciado alrededor del contenido */
+            margin-top: 130px; /* Espacio superior para evitar que el contenido se superponga con el header */
+        }
+        .container {
+            max-width: 500px; /* Ancho máximo para el formulario */
+            margin-top: 120px; /* Espacio superior aumentado */
+            margin-bottom: 120px; /* Espacio inferior */
+            padding: 20px;
+            background-color: #fff; /* Fondo blanco para el formulario */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+        h2 {
+            color: #000; /* Color negro para el encabezado */
+        }
+        .btn-primary {
+            background-color: #000; /* Color del botón negro */
+            border-color: #000; /* Color del borde del botón negro */
+        }
+        .btn-primary:hover {
+            background-color: #333; /* Color del botón al pasar el mouse */
+            border-color: #333; /* Color del borde al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+
+
+   <!-- header -->
+   
+<!-- Header -->
+<nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <div class="container-fluid">
+        <!-- Contenedor flexible para el logo, barra de búsqueda y menú -->
+        <div class="navbar-container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img style="width:130px; height:60px;" src="./imagenes/titulo-isil-removebg-preview.png" alt="Logo de Ride Rave">
+            </a>
+
+            <!-- Barra de búsqueda -->
+            <div class="search-container">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-1" type="search" placeholder="¡Busca aquí, compra y sorpréndete!" aria-label="Buscar" style="border-radius: 30px 0 0 30px;">
+                    <button class="btn btn-outline-light" type="submit" style="border-radius: 0 30px 30px 0;">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Botón del menú hamburguesa -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <!-- Menú de navegación -->
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto"> 
+                <a class="nav-link" href="index.html">Inicio</a>
+                <a class="nav-link" href="productos.html">Catálogo</a>
+                <a class="nav-link" href="servicios.html">Servicios</a>
+                <a class="nav-link" href="contacto.html">Contacto</a>
+            </div>
+        </div>
+        <!-- Iconos de usuario y carrito en pantallas grandes -->
+        <div class="d-flex align-items-center ms-3 d-none d-lg-flex">
+            <!-- Icono de usuario con menú desplegable -->
+            <div class="dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-person-circle" style="font-size: 1.5rem; color: white;"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                    <li><a class="dropdown-item" href="login.html">Iniciar sesión</a></li>
+                    <li><a class="dropdown-item" href="registro.html">Registrarse</a></li>
+                
+                </ul>
+            </div>
+            <!-- Icono de carrito separado -->
+            <a href="#" class="nav-link ms-2" title="Carrito de Compras">
+                <i class="bi bi-cart" style="font-size: 1.5rem; color: white;"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<style>
+    /* Ajuste general para la barra de búsqueda */
+    .search-container {
+        flex-grow: 1;
+        max-width: 600px;
+        width: 100%;
+        margin: 0 10px;
+    }
+
+    /* Alineación centrada para pantallas grandes */
+    @media (min-width: 992px) {
+        .search-container {
+            position:absolute;
+            margin-top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 600px;
+        }
+    }
+
+    /* Alineación en pantallas pequeñas */
+    @media (max-width: 991px) {
+        .navbar-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .search-container {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .navbar-toggler {
+            margin-left: 10px;
+        }
+    }
+</style>
+
+<div class="container" >
+    <style>
+        .container{
+            margin-top:300px;
+            
+        }
+    </style>
+    <h2 class="text-center">Bienvenid@ a Ride Rave</h2>
+
+    
+    <form action="process.php" method="POST" class="mt-4">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Contraseña:</label>
+            <div class="input-group">
+                <input type="password" class="form-control" id="password" name="password" required>
+                <button type="button" class="btn btn-outline-secondary" id="togglePassword">
+                    <i class="bi bi-eye" id="eyeIcon"></i>
+                </button>
+            </div>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="rememberMe">
+            <label class="form-check-label" for="rememberMe">Recordar cuenta</label>
+        </div>
+        <div class="mt-3">
+            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+            <a href="registro.php" class="ms-3">Registrarme</a>
+        </div>
+    </form>
+</div>
+
+ <!-- footer.-->
+
+ <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+
+ <style>
+         /* Estilos para que el footer esté siempre al fondo */
+         html, body {
+             height: 100%;
+             margin: 0;
+         }
+         .wrapper {
+             display: flex;
+             flex-direction: column;
+             min-height: 100vh; /* Asegura que el wrapper ocupe toda la altura de la pantalla */
+         }
+         .content {
+             flex: 1; /* Permite que el contenido ocupe el espacio restante */
+         }
+         .btn-wsp {
+             position: fixed;
+             width: 60px;
+             height: 60px;
+             line-height: 63px;
+             bottom: 25px;
+             right: 25px;
+             background: #25d366;
+             color: #FFF;
+             border-radius: 50px;
+             text-align: center;
+             font-size: 35px;
+             box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+             z-index: 100;
+             transition: all 300ms ease;
+         }
+         .btn-wsp:hover {
+             background: #20ba5a;
+         }
+         @media only screen and (min-width: 320px) and (max-width: 768px) {
+             .btn-wsp {
+                 width: 63px;
+                 height: 63px;
+                 line-height: 66px;
+             }
+         }
+ </style>
+ <footer id="footer" class="container-fluid bg-dark text-light pt-6">
+     <style>
+         footer{
+             margin-top:240px;
+             padding: 20px;
+         }
+     </style>
+             <div style="margin: 10px;" class="row">
+                 <div class="col-md-3">
+                 <a class="navbar-brand" href="#">
+                 <img style="width:150px; height:80px;" src="./imagenes/titulo-isil-removebg-preview.png" alt="">
+             </a>
+            
+                     <p style="color: white; text-align:start;">Sumérgete en el mundo de las motos y encuentra lo que necesitas.</p>
+                 </div>
+                 <div class="col-md-3">
+                     <h5 class="text-uppercase font-weight-bold" style="color: white;">Privacidad, Términos y Otros</h5>
+                     <ul class="list-unstyled">
+                         <li><a href="#Privacy" style="color: #fff;">Privacidad</a></li>
+                         <li><a href="#Terms" style="color: #fff;">Términos y Condiciones</a></li>
+                         <li><a href="#UsageTerms" style="color: #fff;">Términos de uso</a></li>
+                         <li><a href="#Donations" style="color: #fff;">Realizar donativos</a></li>
+                         <li><a href="#Cookies" style="color: #fff;">Cookies</a></li>
+                     </ul>
+                 </div>
+                 <div class="col-md-3">
+                     <h5 class="text-uppercase font-weight-bold" style="color: white;">Navegación</h5>
+                         <ul class="list-unstyled">
+                             <li><a href="index.html" style="color: #fff;">Volver al principio</a></li>
+                             <li><a href="#" style="color: #fff;">Acerca de nosotros</a></li>
+                             <li><a href="contacto.html" style="color: #fff;">Catalogos</a></li>
+                             <li><a href="servicios.html" style="color: #fff;">Servicios</a></li>
+                             <li><a href="contacto.html" style="color: #fff;">Contáctanos</a></li>
+                             <li><a href="login.html" style="color: #fff;">Dejanos un comentario</a></li>
+                         </ul>
+                 </div>
+                 <div class="col-md-3">
+                    <h5 class="text-uppercase font-weight-bold" style="color: white;">Redes Sociales</h5>
+                         <ul class="list-inline">
+                             <li class="list-inline-item"><a Target="_blank" href="https://www.facebook.com/" class="text-light"><i class="bi bi-facebook"></i></a></li>
+                             <li class="list-inline-item"><a Target="_blank" href="https://www.instagram.com/" class="text-light"><i class="bi bi-instagram"></i></a></li>
+                             <li class="list-inline-item"><a href="contacto.html" class="text-light"><i class="bi bi-envelope"></i></a></li>
+                             <li class="list-inline-item"><a Target="_blank" href="https://www.youtube.com/" class="text-light"><i class="bi bi-youtube"></i></a></li>
+                             <li class="list-inline-item"><a Target="_blank" href="https://www.x.com/" class="text-light"><i class="bi bi-twitter"></i></a></li>
+                         </ul>
+                  </div>
+             </div>
+             <hr class="my-4"/>
+             <div class="footer-copyright text-center py-3">
+                 © 2024 Ride Rave <a style="color: #fff; text-decoration: none;" href="#"> | Todos los derechos reservados</a>
+             </div>
+             </div>
+             <a href="https://api.whatsapp.com/send?phone=951721362" class="btn-wsp" target="_blank">
+                 <i class="fa fa-whatsapp icono"></i>
+             </a>
+ 
+ </footer>
+
+<script>
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
+    const eyeIcon = document.getElementById('eyeIcon');
+
+    togglePassword.addEventListener('click', () => {
+        // Cambiar el tipo de input de password a text y viceversa
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        // Cambiar el icono de ojo
+        eyeIcon.classList.toggle('bi-eye');
+        eyeIcon.classList.toggle('bi-eye-slash');
+    });
+</script>
+
+</body>
+</html>

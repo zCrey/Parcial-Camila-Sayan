@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ride Rave - Servicios</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+
+    <!-- Script para Bootstrap y jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="icon" href="./imagenes/titulo-isil-removebg-preview.png">
+    
+    
+    <style>
+        body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Samsung Sharp Sans', sans-serif;
+    background-color:#f5f5f5;;
+}
+
+
+
+        .content {
+            flex: 1;
+            padding: 100px; /* Espaciado alrededor del contenido */
+            margin-top: 120px; /* Espacio superior para evitar que el contenido se superponga con el header */
+        }
+        
+        
+        .service-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .service-card .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .service-card .btn {
+            background-color: black;
+            color: white;
+            border: none;
+            margin-top: 10px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .service-card .btn:hover {
+            background-color: #333;
+        }
+
+        .publicidad {
+            margin-top: 40px;
+        }
+
+        .publicidad h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .publicidad iframe {
+            width: 100%;
+            height: 315px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+   <!-- header -->
+   
+<!-- Header -->
+<nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <div class="container-fluid">
+        <!-- Contenedor flexible para el logo, barra de búsqueda y menú -->
+        <div class="navbar-container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img style="width:130px; height:60px;" src="./imagenes/titulo-isil-removebg-preview.png" alt="Logo de Ride Rave">
+            </a>
+
+            <!-- Barra de búsqueda -->
+            <div class="search-container">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-1" type="search" placeholder="¡Busca aquí, compra y sorpréndete!" aria-label="Buscar" style="border-radius: 30px 0 0 30px;">
+                    <button class="btn btn-outline-light" type="submit" style="border-radius: 0 30px 30px 0;">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Botón del menú hamburguesa -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <!-- Menú de navegación -->
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto"> 
+                <a class="nav-link" href="index.html">Inicio</a>
+                <a class="nav-link" href="productos.html">Catálogo</a>
+                <a class="nav-link" href="servicios.html">Servicios</a>
+                <a class="nav-link" href="contacto.html">Contacto</a>
+            </div>
+        </div>
+        <!-- Iconos de usuario y carrito en pantallas grandes -->
+        <div class="d-flex align-items-center ms-3 d-none d-lg-flex">
+            <!-- Icono de usuario con menú desplegable -->
+            <div class="dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-person-circle" style="font-size: 1.5rem; color: white;"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                    <li><a class="dropdown-item" href="login.html">Iniciar sesión</a></li>
+                    <li><a class="dropdown-item" href="registro.html">Registrarse</a></li>
+                
+                </ul>
+            </div>
+            <!-- Icono de carrito separado -->
+            <a href="#" class="nav-link ms-2" title="Carrito de Compras">
+                <i class="bi bi-cart" style="font-size: 1.5rem; color: white;"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<style>
+    /* Ajuste general para la barra de búsqueda */
+    .search-container {
+        flex-grow: 1;
+        max-width: 600px;
+        width: 100%;
+        margin: 0 10px;
+    }
+
+    /* Alineación centrada para pantallas grandes */
+    @media (min-width: 992px) {
+        .search-container {
+            position:absolute;
+            margin-top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 600px;
+        }
+    }
+
+    /* Alineación en pantallas pequeñas */
+    @media (max-width: 991px) {
+        .navbar-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .search-container {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .navbar-toggler {
+            margin-left: 10px;
+        }
+    }
+</style>
+
+
+<div class="content container mt-5" >
+    <h1 class="text-center mb-5">Nuestros Servicios</h1>
+    <div class="row">
+        <!-- Tarjeta 1 -->
+        <div class="col-md-6">
+            <div class="service-card">
+                <img src="./imagenes/servicio 1 (1).png" alt="Servicio 1">
+            </div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="col-md-6">
+            <div class="service-card">
+                <img src="./imagenes/servicio 2 (2).png" alt="Servicio 2">
+            </div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="col-md-6">
+            <div class="service-card">
+                <img src="./imagenes/servicio 3.png" alt="Servicio 3">
+            </div>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="col-md-6">
+            <div class="service-card">
+                <img src="./imagenes/servicio 4.png" alt="Servicio 4">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- comentarios -->
+<div class="container mt-4">
+    <h2 class="text-center">Lo que dicen nuestros clientes</h2>
+    <div id="commentsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <img src="https://img.freepik.com/foto-gratis/hombre-joven-pie-mano-bolsillo-cerca-pared-roja_23-2148193984.jpg" alt="Juan Pérez" class="img-fluid rounded-circle" style="width: 120px; height: 120px;">
+                        <h2>Juan Pérez</h2>
+                        <p>¡Excelente servicio! Tienen un mantenimiento de primera.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <img src="https://img.freepik.com/foto-gratis/vista-frontal-hermosa-mujer-embarazada-casa_23-2148765052.jpg" alt="María Gómez" class="img-fluid rounded-circle" style="width: 120px; height: 120px;">
+                        <h2>María Gómez</h2>
+                        <p>Siempre encuentro lo que necesito aquí. ¡Recomiendo Ride Rave a todos!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <img src="https://www.shutterstock.com/image-photo/20-year-old-hispanic-man-260nw-2282516109.jpg" alt="Carlos Rodríguez" class="img-fluid rounded-circle" style="width: 120px; height: 120px;">
+                        <h2>Carlos Rodríguez</h2>
+                        <p>Los mejores precios y la calidad de las motos es excepcional.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <img src="https://media.istockphoto.com/id/1443543154/es/foto/mujer-madura-sonriente-parada-en-un-parque-al-aire-libre-en-el-verano.jpg?s=612x612&w=0&k=20&c=HPAe9YHssWvxd0fDG2TQmMzXT9Hfk97HBm8qvE6Ktac=" alt="Ana Torres" class="img-fluid rounded-circle" style="width: 120px; height: 120px;">
+                        <h2>Ana Torres</h2>
+                        <p>Me encanta esta pagina, es mi lugar favorito. ¡Gracias!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <img src="https://st3.depositphotos.com/3648933/16978/i/450/depositphotos_169784492-stock-photo-handsome-man-sitting-on-train.jpg" alt="Luis Méndez" class="img-fluid rounded-circle" style="width: 120px; height: 120px;">
+                        <h2>Luis Méndez</h2>
+                        <p>Excelente atención al cliente, siempre dispuestos a ayudar.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <img src="https://st4.depositphotos.com/2030185/27155/i/450/depositphotos_271553086-stock-photo-teenage-girl-sits-on-beach.jpg" alt="Sofía López" class="img-fluid rounded-circle" style="width: 120px; height: 120px;">
+                        <h2>Sofía López</h2>
+                        <p>Me gustaría ver más variedad motos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <img src="https://st2.depositphotos.com/1049680/44639/i/450/depositphotos_446393578-stock-photo-young-latin-man-smiling-happy.jpg" alt="Fernando Ruiz" class="img-fluid rounded-circle" style="width: 120px; height: 120px;">
+                        <h2>Fernando Ruiz</h2>
+                        <p>Gran experiencia de compra, volveré a comprar aquí.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <img src="https://img.freepik.com/foto-gratis/mujer-sonriente-posando-playa_23-2148629772.jpg?size=626&ext=jpg&ga=GA1.1.967060102.1728864000&semt=ais_hybrid" alt="Lucía Salas" class="img-fluid rounded-circle" style="width: 120px; height: 120px;">
+                        <h2>Lucía Salas</h2>
+                        <p>Me gustaría que incluyeran más promociones en la marca Yamaha.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <img src="https://media.istockphoto.com/id/1365557888/es/foto/estudiante-de-intercambio-de-rasgos-ind%C3%ADgenas-delante-de-un-fondo-amarillo.jpg?s=612x612&w=0&k=20&c=hrZ9XdZjD_buldP-puWpeJJgoqpnBWbXArFcXyokCyY=" alt="Roberto Castillo" class="img-fluid rounded-circle" style="width: 120px; height: 120px;">
+                        <h2>Roberto Castillo</h2>
+                        <p>¡El tramite fue rapidísimo! Estoy muy satisfecho con mi moto.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <img src="https://scontent.flim38-1.fna.fbcdn.net/v/t1.6435-9/69862473_117698832939534_6776617180793405440_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=R05p_80aYWcQ7kNvgE-E2id&_nc_zt=23&_nc_ht=scontent.flim38-1.fna&_nc_gid=A4tkgPLlAydFqpp8GoZBNMX&oh=00_AYCNq9v648xQ59JHEOgLjthVi6mTmE7VxVetEfhwhxcenw&oe=6735BCEA" alt="Valeria Montalvo" class="img-fluid rounded-circle" style="width: 120px; height: 120px;">
+                        <h2>Valeria Montalvo</h2>
+                        <p>¡El finaciamiento es espectacular!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <img src="https://img.freepik.com/foto-gratis/retrato-hombre-joven-hermoso-que-mira-camara_23-2148130371.jpg" alt="Javier García" class="img-fluid rounded-circle" style="width: 120px; height: 120px;">
+                        <h2>Javier García</h2>
+                        <p>Me encanta la forma en que se presentan las motos en la tienda.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <img src="https://st4.depositphotos.com/1003234/21105/i/450/depositphotos_211056950-stock-photo-mature-woman-glasses-portrait.jpg" alt="Lucía Jiménez" class="img-fluid rounded-circle" style="width: 120px; height: 120px;">
+                        <h2>Lucía Jiménez</h2>
+                        <p>Las motos son de excelente calidad! Estoy muy feliz con mi compra.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 40px; /* Ancho de las flechas */
+        height: 40px; /* Alto de las flechas */
+        background-color: transparent; /* Fondo transparente */
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: black; /* Color de fondo de las flechas */
+        border-radius: 50%; /* Bordes redondeados */
+        width: 30px; /* Ancho de las flechas */
+        height: 30px; /* Alto de las flechas */
+    }
+
+    .carousel-control-prev-icon::after,
+    .carousel-control-next-icon::after {
+        color: white; /* Color del ícono */
+    }
+        </style>
+
+<button class="carousel-control-prev" type="button" data-bs-target="#commentsCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#commentsCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+
+
+
+    <!-- footer -->
+
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+
+    <style>
+            /* Estilos para que el footer esté siempre al fondo */
+            html, body {
+                height: 100%;
+                margin: 0;
+            }
+            .wrapper {
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh; /* Asegura que el wrapper ocupe toda la altura de la pantalla */
+            }
+            .content {
+                flex: 1; /* Permite que el contenido ocupe el espacio restante */
+            }
+            .btn-wsp {
+                position: fixed;
+                width: 60px;
+                height: 60px;
+                line-height: 63px;
+                bottom: 25px;
+                right: 25px;
+                background: #25d366;
+                color: #FFF;
+                border-radius: 50px;
+                text-align: center;
+                font-size: 35px;
+                box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+                z-index: 100;
+                transition: all 300ms ease;
+            }
+            .btn-wsp:hover {
+                background: #20ba5a;
+            }
+            @media only screen and (min-width: 320px) and (max-width: 768px) {
+                .btn-wsp {
+                    width: 63px;
+                    height: 63px;
+                    line-height: 66px;
+                }
+            }
+    </style>
+    <footer id="footer" class="container-fluid bg-dark text-light pt-6">
+        <style>
+            footer{
+                padding:20px;
+            }
+        </style>
+                <div style="margin: 10px;" class="row">
+                    <div class="col-md-3">
+                    <a class="navbar-brand" href="#">
+                    <img style="width:150px; height:80px;" src="./imagenes/titulo-isil-removebg-preview.png" alt="">
+                </a>
+               
+                        <p style="color: white;">Sumérgete en el mundo de las motos y encuentra lo que necesitas.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h5 class="text-uppercase font-weight-bold" style="color: white;">Privacidad, Términos y Otros</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#Privacy" style="color: #fff;">Privacidad</a></li>
+                            <li><a href="#Terms" style="color: #fff;">Términos y Condiciones</a></li>
+                            <li><a href="#UsageTerms" style="color: #fff;">Términos de uso</a></li>
+                            <li><a href="#Donations" style="color: #fff;">Realizar donativos</a></li>
+                            <li><a href="#Cookies" style="color: #fff;">Cookies</a></li>
+                            <li><a href="lista.html" style="color: #FFF;">Lista de sucursales</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h5 class="text-uppercase font-weight-bold" style="color: white;">Navegación</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="index.html" style="color: #fff;">Volver al principio</a></li>
+                                <li><a href="#" style="color: #fff;">Acerca de nosotros</a></li>
+                                <li><a href="contacto.html" style="color: #fff;">Catalogos</a></li>
+                                <li><a href="servicios.html" style="color: #fff;">Servicios</a></li>
+                                <li><a href="contacto.html" style="color: #fff;">Contáctanos</a></li>
+                                <li><a href="login.html" style="color: #fff;">Dejanos un comentario</a></li>
+                            </ul>
+                    </div>
+                    <div class="col-md-3">
+                       <h5 class="text-uppercase font-weight-bold" style="color: white;">Redes Sociales</h5>
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a Target="_blank" href="https://www.facebook.com/" class="text-light"><i class="bi bi-facebook"></i></a></li>
+                                <li class="list-inline-item"><a Target="_blank" href="https://www.instagram.com/" class="text-light"><i class="bi bi-instagram"></i></a></li>
+                                <li class="list-inline-item"><a href="contacto.html" class="text-light"><i class="bi bi-envelope"></i></a></li>
+                                <li class="list-inline-item"><a Target="_blank" href="https://www.youtube.com/" class="text-light"><i class="bi bi-youtube"></i></a></li>
+                                <li class="list-inline-item"><a Target="_blank" href="https://www.x.com/" class="text-light"><i class="bi bi-twitter"></i></a></li>
+                            </ul>
+                     </div>
+                </div>
+                <hr class="my-4"/>
+                <div class="footer-copyright text-center py-3">
+                    © 2024 Ride Rave <a style="color: #fff; text-decoration: none;" href="#"> | Todos los derechos reservados</a>
+                </div>
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=951721362" class="btn-wsp" target="_blank">
+                    <i class="fa fa-whatsapp icono"></i>
+                </a>
+    
+    </footer>
+    </body>
+    </body>
+    </html>
